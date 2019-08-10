@@ -44,7 +44,7 @@ ORDER BY SubTotal DESC
 --10.
 /*How many products in ProductCategory 'Cranksets' have been sold to an address in 'London'?
 */
-SELECT COUNT(ProductCategory.Name)
+SELECT SUM(SalesOrderDetail.OrderQty)
 FROM ProductCategory
 JOIN Product ON (ProductCategory.ProductCategoryID=Product.ProductCategoryID)
 JOIN SalesOrderDetail ON (Product.ProductID=SalesOrderDetail.ProductID)
